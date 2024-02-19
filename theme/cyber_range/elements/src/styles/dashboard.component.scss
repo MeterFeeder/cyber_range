@@ -1,0 +1,244 @@
+#dashboard {
+
+
+  .onboarding {
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--bs-border-radius);
+    font-family: Metropolis, sans-serif;
+    min-height: 75px;
+    padding-bottom: 14px;
+
+    >.row {
+      display: flex;
+
+      .stage {
+        text-transform: uppercase;
+        text-align: center;
+        padding: 25px;
+
+        &:first-child {
+          text-align: left;
+
+        }
+
+        &:last-child {
+          text-align: right;
+
+        }
+
+        .complete {
+          line-height: 18px;
+          --ekc-icon-size: 16px;
+          background: var(--color-success);
+          margin-left: 10px;
+          margin-bottom: -2px;
+        }
+      }
+    }
+
+    .progress-wrapper {
+      margin: 0 calc(var(--bs-gutter-x) * .5);
+    }
+
+    .progress {
+      height: 4px;
+    }
+  }
+
+  .bottom-row {
+
+    h4 {
+      font-size: 16px;
+      padding-bottom: 0px;
+    }
+
+    .details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-items: flex-start;
+      font-family: Arial, sans-serif;
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .complete {
+        display: inline-block;
+        vertical-align: baseline;
+        font-size: 12px;
+      }
+
+      .progress-wrapper {
+        display: inline-block;
+        vertical-align: baseline;
+        margin-left: 10px;
+
+        .progress {
+          margin-top: 3px;
+          width: 265px;
+          height: 9px;
+        }
+      }
+    }
+
+    .item-card {
+      box-shadow: none;
+      padding: 12px;
+      width: 491px;
+      height: 76px;
+      margin-bottom: 15px;
+      border: 1px solid #0081C533;
+
+      h4 {
+        height: 15px;
+      }
+
+      .icon-wrapper {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        top: 5px;
+        left: 5px;
+        padding: 7px;
+        --ekc-icon-size: 26px;
+      }
+
+      .icon-wrapper.bookmark {
+        background: var(--color-success);
+
+        ekc-icon {
+          background: white;
+        }
+      }
+
+      .icon-wrapper.glass {
+        background: var(--color-secondary);
+
+        ekc-icon {
+          background: white;
+        }
+      }
+
+      .icon-wrapper.book-1 {
+        background: var(--color-primary);
+
+        ekc-icon {
+          background: white;
+          ;
+        }
+      }
+
+      .arrow-wrapper {
+        position: relative;
+        top: 12px;
+        right: 12px;
+      }
+
+      ;
+    }
+  }
+
+  .snapshot-wrapper {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: var(--bs-gutter-x);
+    padding-right: 0;
+
+    ekc-icon {
+      background: white;
+    }
+
+    .card-header {
+      background: transparent;
+    }
+
+    .card-body {
+
+      p {
+
+        letter-spacing: 0em;
+        color: white;
+        text-align: center;
+
+        &.value {
+
+          font-family: Inter, sans-serif;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 29px;
+
+        }
+
+        &.name {
+          font-family: Gotham, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 13px;
+        }
+      }
+
+    }
+
+    .profile {
+      vertical-align: top;
+
+      h2,
+      .card-header {
+        padding: 0;
+      }
+    }
+
+    .col-md-4 {
+      box-shadow: none;
+      width: calc(33.33333333% - 16px);
+    }
+  }
+
+  .user-details {
+    display: flex;
+    align-items: center;
+    padding: 10px 0 0 0;
+
+    .avatar-wrapper {
+      margin-top: -9px;
+      width: 64px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .user-wrapper {
+      padding: 10px 10px 0 10px;
+
+      .name {
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      .role {
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+  }
+}
+

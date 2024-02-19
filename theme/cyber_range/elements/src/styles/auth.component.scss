@@ -1,0 +1,154 @@
+#auth {
+  position: absolute;
+  left: 0;
+  right: 0;
+  // height: 100%;
+  background-image: url('../assets/auth_background.png');
+  background-size: cover;
+  background-attachment: fixed;
+
+  .card {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: white;
+
+    .card-header {
+      border-bottom: 0;
+      background: transparent;
+    }
+  }
+
+  h1 {
+    text-transform: none;
+  }
+
+  textarea,
+  input[type="text"],
+  input[type="date"],
+  input[type="password"] {
+    background: #FFFFFF21;
+    border-radius: 7px;
+    border: 0;
+    color: #FFF;
+    padding-left: 20px;
+    margin-top: 25px;
+  }
+
+  textarea {
+    height: 112px;
+    width: 475px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="password"] {
+    height: 43px;
+    width: 220px;
+  }
+
+  .container {
+    color: #FFF;
+    font-family: Metropolis;
+    text-align: left;
+    // width: 500px;
+    padding-left: 0px;
+    margin: 0 300px;
+
+    .form {
+      font-family: Inter, sans-serif;
+
+      span {
+        color: red;
+      }
+
+      .required {
+        padding-top: 10px;
+      }
+    }
+
+    h2 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 48px;
+      letter-spacing: 0em;
+      color: white;
+    }
+
+    a {
+      color: #FFF;
+      line-height: 45px;
+    }
+
+    .pad-top {
+      padding-top: 45px;
+    }
+
+    button {
+      background: linear-gradient(0deg, #6DB657, #6DB657),
+        linear-gradient(0deg, rgba(114, 201, 191, 0), rgba(114, 201, 191, 0));
+      border: 2px solid #72C9BF;
+      width: 285px;
+      height: 50px;
+      border-radius: 10px;
+      color: #FFF;
+      margin-bottom: 20px;
+    }
+  }
+
+
+  ekc-icon {
+    background: var(--color-success);
+    margin-right: 1em;
+  }
+
+  a {
+    color: var(--light-text);
+  }
+
+  form .btn {
+    width: 285px;
+    color: #FFFFFF;
+  }
+
+  .forgetpass p a {
+    font-size: larger ;
+  }
+
+  .login-container {
+    font-family: Inter, sans-serif;
+    margin-top: 2em;
+  }
+
+  // TODO Replace with bootstrap invalid-feedback once form has validators
+  .invalid-credentials {
+    color: var(--color-alert);
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 400px;
+  }
+
+  .login-header-row {
+    display: flex;
+  }
+
+  .alert-color {
+    color: var(--color-alert);
+  }
+
+  .form-control {
+    background: #FFFFFF21;
+    border: none;
+    color: var(--light-text);
+    height: 43px;
+    border-radius: 7px;
+  }
+
+  .form-control::placeholder {
+    color: var(--light-text-tint);
+  }
+
+}

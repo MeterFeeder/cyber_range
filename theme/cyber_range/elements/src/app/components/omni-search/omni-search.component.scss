@@ -1,0 +1,44 @@
+.form {
+  position: relative;
+  ekc-icon {
+    --ekc-icon-size: 17px;
+    position: absolute;
+    top: 11px;
+    left: 16px;
+    color: #7A7979;
+    display: inline-block;
+  }
+}
+
+.form span {
+
+  position: absolute;
+  right: 17px;
+  top: 13px;
+  padding: 2px;
+  border-left: 1px solid #d1d5db;
+
+}
+
+.left-pan {
+  padding-left: 7px;
+}
+
+.left-pan i {
+
+  padding-left: 10px;
+}
+
+.form-input {
+
+  height: 40px;
+  text-indent: 33px;
+  border-radius: 10px;
+  background: var(--bs-white);
+}
+
+.form-input:focus {
+
+  box-shadow: none;
+  border: none;
+}

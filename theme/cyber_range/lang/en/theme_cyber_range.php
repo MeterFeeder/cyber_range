@@ -5,7 +5,7 @@
 defined('MOODLE_INTERNAL') || die();                                                                                                
                                                                                                                                     
 // A description shown in the admin theme selector.                                                                                 
-$string['choosereadme'] = 'Theme photo is a child theme of Boost. It adds the ability to upload background photos.';                
+$string['choosereadme'] = 'Theme  is a child theme of Boost.';                
 // The name of our plugin.                                                                                                          
 $string['pluginname'] = 'Cyber Range';                                                                                                    
 // We need to include a lang string for each block region.                                                                          
