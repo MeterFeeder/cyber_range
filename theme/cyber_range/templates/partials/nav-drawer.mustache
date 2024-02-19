@@ -1,0 +1,46 @@
+{{!
+    @template theme_boost/nav-drawer
+
+
+    Example context (json): {}
+}}
+
+<div class="l-navbar" id="nav-bar">
+  <nav class="nav">
+    <div>
+      <a routerLink="/" class="nav_logo">
+        <img src="assets/heartland-cr-logo.svg" alt="">
+      </a>
+      <div class="nav_list">
+      {{#flatnavigation}}
+          <a href="{{action}}" class="nav_link" tooltip="{{text}}">
+            <!-- <ekc-icon type="{{icon.pix}}"></ekc-icon> -->
+            {{#pix}}{{{icon.pix}}}, {{{icon.component}}}, {{{icon.alt}}}{{/pix}}
+          </a>
+        
+      {{/flatnavigation}}
+
+{{! 
+        <a routerLink="/profile" class="nav_link">
+          <ekc-icon type="profile-circlebkgd"></ekc-icon>
+        </a>
+        <a href="#" class="nav_link">
+          <ekc-icon type="book-circlebkgd"></ekc-icon>
+        </a>
+        <a href="#" class="nav_link">
+          <ekc-icon type="trophy-circlebkgd"></ekc-icon>
+        </a>
+        <a routerLink="/student/announcements" class="nav_link">
+          <ekc-icon type="stopwatch-circlebkgd"></ekc-icon>
+        </a>
+        <a href="#" class="nav_link">
+          <ekc-icon type="suitcase-circlebkgd"></ekc-icon>
+        </a>
+        <a href="#" class="nav_link">
+          <ekc-icon type="headset-circlebkgd"></ekc-icon>
+        </a>
+      </div>
+    </div> }}
+
+  </nav>
+</div>
