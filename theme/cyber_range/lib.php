@@ -20,7 +20,9 @@ function fix_path($node, $attr)
 function theme_cyber_range_get_angular_content($templatecontext)
 {
 
-    $templatecontext["primarymoremenu"]['nodearray'] = theme_cyber_range_add_menu_icons($templatecontext["primarymoremenu"]['nodearray']);
+    if (array_key_exists('primarymoremenu', $templatecontext) && array_key_exists('nodearray', $templatecontext['primarymoremenu'])) {
+        $templatecontext["primarymoremenu"]['nodearray'] = theme_cyber_range_add_menu_icons($templatecontext["primarymoremenu"]['nodearray']);
+    }
 
     $baseurl = '/elements/dist/elements/browser/';
 
@@ -55,7 +57,10 @@ function theme_cyber_range_get_angular_content($templatecontext)
 }
 
 function theme_cyber_range_add_menu_icons($items) {
-    
+
+    if (!count($items)) {
+        return $items;
+    }
 
     for ($i = 0; $i < count($items); $i++) {
         switch ($items[$i]['key']) {
