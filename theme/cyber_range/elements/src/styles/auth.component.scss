@@ -86,7 +86,7 @@
     button {
       background: linear-gradient(0deg, #6DB657, #6DB657),
         linear-gradient(0deg, rgba(114, 201, 191, 0), rgba(114, 201, 191, 0));
-      border: 2px solid #72C9BF;
+      // border: 2px solid #72C9BF;
       width: 285px;
       height: 50px;
       border-radius: 10px;
@@ -117,6 +117,8 @@
   .login-container {
     font-family: Inter, sans-serif;
     margin-top: 2em;
+    background: transparent;
+    padding: 0;
   }
 
   // TODO Replace with bootstrap invalid-feedback once form has validators

@@ -81,12 +81,12 @@ $THEME->layouts = [
         'defaultregion' => 'side-pre',
     ),
     // The site home page.
-    'frontpage' => array(
-        'file' => 'welcome.php',
-        'regions' => array('side-pre'),
-        'defaultregion' => 'side-pre',
-        'options' => array('nonavbar' => true),
-    ),
+    // 'frontpage' => array(
+    //     'file' => 'welcome.php',
+    //     'regions' => array('side-pre'),
+    //     'defaultregion' => 'side-pre',
+    //     'options' => array('nonavbar' => true),
+    // ),
     // Server administration scripts.
     'admin' => array(
         'file' => 'columns2.php',
