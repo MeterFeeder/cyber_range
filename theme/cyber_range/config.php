@@ -69,6 +69,13 @@ $THEME->layouts = [
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
     ),
+    // My courses page.
+    'mycourses' => array(
+        'file' => 'mycourses.php',
+        'regions' => ['side-pre'],
+        'defaultregion' => 'side-pre',
+        'options' => array('nonavbar' => true),
+    ),
     'coursecategory' => array(
         'file' => 'columns2.php',
         'regions' => array('side-pre'),

@@ -47,7 +47,7 @@ function theme_cyber_range_get_angular_content($templatecontext)
     
     $templatecontext['javascript'] = $javascript;
     $templatecontext['styles'] = $styles;
-    $templatecontext['baseurl'] = "/theme/cyber_range/$baseurl";
+    $templatecontext['baseurl'] = "/theme/cyber_range$baseurl";
     
     $templatecontext['logo_image_url'] = $templatecontext['output']->image_url('heartland-cr-logo', 'theme');
     return $templatecontext;
