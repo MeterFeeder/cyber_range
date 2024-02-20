@@ -56,7 +56,7 @@ $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settin
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
-$templatecontext = [
+$templatecontext = theme_cyber_range_get_angular_content([
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
     'sidepreblocks' => $blockshtml,
@@ -72,6 +72,6 @@ $templatecontext = [
     'headercontent' => $headercontent,
     'overflow' => $overflow,
     'addblockbutton' => $addblockbutton,
-];
+]);
 
-echo $OUTPUT->render_from_template('theme_cyber_range/columns2', $templatecontext);
+echo $OUTPUT->render_from_template('theme_cyber_range/courseoverview', $templatecontext);
