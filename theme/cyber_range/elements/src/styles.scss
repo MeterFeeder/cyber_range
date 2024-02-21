@@ -9,7 +9,7 @@ $tertiary: #0081C5;
 $success: #6DB657;
 $warning: #ffc409;
 $danger: #B80B4D;
-$dark-text: #494848;
+$dark-text: #494848; 
 $secondary-text: #5B5B5B;
 $light-text: #FFFFFF;
 $alert: #C60808;
@@ -29,12 +29,15 @@ $alert: #C60808;
   --ekc-icon-size: 24px;
   --light-text: #FFFFFF;
   --light-text-tint: #9e9e9e;
+  --mid-dark-text: #7A7979;
+  --dark-text: #494848;
   --color-primary: #212B66;
   --color-secondary: #71B2DC;
   --color-tertiary: #0081C5;
   --color-danger: #B80B4D;
   --color-success: #6DB657;
   --color-alert: #C60808;
+  --color-mid-blue-background: #212B6614;
 }
 
 body {
