@@ -9,40 +9,8 @@
     {{> theme_cyber_range/partials/search }}
 
     <div class="container mb-3">
-    {{#courseindex}}
-        <div class="drawer-toggler drawer-left-toggle open-nav d-print-none">
-            <button
-                class="btn icon-no-margin"
-                data-toggler="drawers"
-                data-action="toggle"
-                data-target="theme_boost-drawers-courseindex"
-                data-toggle="tooltip"
-                data-placement="right"
-                title="{{#str}}opendrawerindex, core{{/str}}"
-            >
-                <span class="sr-only">{{#str}}opendrawerindex, core{{/str}}</span>
-                {{#pix}} t/index_drawer, moodle {{/pix}}
-            </button>
-        </div>
-    {{/courseindex}}
-    {{#hasblocks}}
-                    <div class="drawer-toggler drawer-right-toggle ml-auto d-print-none">
-                        <button
-                            class="btn icon-no-margin"
-                            data-toggler="drawers"
-                            data-action="toggle"
-                            data-target="theme_boost-drawers-blocks"
-                            data-toggle="tooltip"
-                            data-placement="right"
-                            title="{{#str}}opendrawerblocks, core{{/str}}"
-                        >
-                            <span class="sr-only">{{#str}}opendrawerblocks, core{{/str}}</span>
-                            <span class="dir-rtl-hide">{{#pix}}t/blocks_drawer, core{{/pix}}</span>
-                            <span class="dir-ltr-hide">{{#pix}}t/blocks_drawer_rtl, core{{/pix}}</span>
-                        </button>
-                    </div>
-                {{/hasblocks}}
-        {{{ output.main_content }}}
+    <ekc-mycourses></ekc-mycourses>
+
     </div>
   </div>
 </div>

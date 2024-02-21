@@ -1410,6 +1410,7 @@ class core_renderer extends renderer_base {
         // Render the layout using the layout file.
         $rendered = $this->render_page_layout($layoutfile);
 
+
         // Slice the rendered output into header and footer.
         $cutpos = strpos($rendered, $this->unique_main_content_token);
         if ($cutpos === false) {

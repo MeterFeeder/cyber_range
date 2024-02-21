@@ -3,6 +3,8 @@ import { createCustomElement } from "@angular/elements";
 import { IconComponent } from "./components/icon/icon.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { OmniSearchComponent } from "./components/omni-search/omni-search.component";
+import { MycoursesComponent } from "./components/mycourses/mycourses.component";
+import { IncourseComponent } from "./components/incourse/incourse.component";
 
 @NgModule({
   declarations: [],
@@ -15,6 +17,8 @@ export class AppModule {
   components = [
     { selector: "ekc-icon", class: IconComponent},
     { selector: "ekc-omni-search", class: OmniSearchComponent},
+    { selector: "ekc-mycourses", class: MycoursesComponent},
+    { selector: "ekc-incourse", class: IncourseComponent}
   ];
 
   ngDoBootstrap() {
