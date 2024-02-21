@@ -1,3 +1,26 @@
+## Cyber Range Template release
+
+# Release key:
+```
+ssh-keygen -t ed25519 -C "dan@meterfeeder.com"
+```
+Password is same as the admin login for Moodle BD.
+
+## Git Clone:
+```
+GIT_SSH_COMMAND='ssh -i id_ed25519 -o IdentitiesOnly=yes' git clone git@github.com:MeterFeeder/cyber_range.git moodle
+cd moodle
+git checkout cyber_range/main
+cp ../moodle.back/config.php .
+```
+
+## Build the customer js/css for theme's web elements:
+```
+cd theme/cyber_range/elements/
+yarn
+yarn build  ## Currently not working, runs out of memory.
+```
+
 # Moodle
 
 <p align="center"><a href="https://moodle.org" target="_blank" title="Moodle Website">
