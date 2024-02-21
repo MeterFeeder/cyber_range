@@ -26,7 +26,7 @@ h3 {
 
 .course-summary {
     font-size: 15px;
-    max-width: 1076px;;
+    max-width: 1076px;
 }
 
 .course-header-image {
@@ -37,7 +37,6 @@ h3 {
     top: 233px;
     left: 121px;
     border-radius: 20px;
-    background-color: lime;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,8 +55,8 @@ h3 {
 
 .form-control {
     border-radius: 7px;
-    background-color: #212B6614;
-    color: #212B66;
+    background-color: var(--color-mid-blue-background);
+    color: var(--blue-text);
     border: none;
 }
 
@@ -65,4 +64,49 @@ h3 {
     background-color: #212B6614;
     border: none;
     color: #212B66;
-  }
+}
+
+.list-container {
+    border-radius: 6px;
+    background-color: var(--color-mid-blue-background);
+}
+
+ul {
+    list-style-type: none;
+    color: var(--blue-text);
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    border-bottom: 1px solid #00000033;
+    padding-top: 1em;
+    margin: 0 1em;
+}
+
+.line-item-header {
+    font-family: Gotham, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0px;
+    margin-bottom: 0.25em;
+}
+
+.line-item-secondary-text {
+    font-family: Gotham, sans-seif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: var(--mid-dark-text);
+    padding-left: 1.5em;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+.bullet {
+    font-size: 2em;
+}
