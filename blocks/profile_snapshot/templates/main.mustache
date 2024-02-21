@@ -1,0 +1,17 @@
+
+
+<div class="container">
+  <div class="row d-flex align-items-stretch">
+    <div class="col-12">
+      <section class="card">
+        <header class="card-header">
+          <h2>{{ tabTitle }}</h2>
+        </header>
+        <div class="card-body">
+          <ekc-profile-progression [competencies]="competencies" *ngIf="tab() == 'progression'"></ekc-profile-progression>
+          <ekc-profile-settings *ngIf="tab() == 'settings'"></ekc-profile-settings>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
