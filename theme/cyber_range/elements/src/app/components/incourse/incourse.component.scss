@@ -1,0 +1,104 @@
+h4 {
+  font-family: Metropolis;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.subtext {
+  color: #5B5B5B;
+}
+
+.course-card {
+  padding: 20px;
+}
+
+.image-div {
+  height: 240px;
+  background: #D9D9D9;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.launch-button {
+  background: linear-gradient(0deg, #6DB657, #6DB657),
+  linear-gradient(0deg, rgba(114, 201, 191, 0), rgba(114, 201, 191, 0));
+  color: white;
+  border-radius: 10px;
+}
+
+.icon-wrapper.star {
+  position: relative;
+  top: 5px;
+  margin: 10px;
+
+  ekc-icon {
+    background: #212B6626;
+  }
+}
+
+.icon-wrapper.star.green-star {
+  ekc-icon {
+    background: #6DB657;
+  }
+}
+
+.doc-card {
+  margin-top: 20px;
+  padding: 20px;
+  height: 311px;
+}
+
+.prereq-card {
+  margin-top: 20px;
+  padding: 20px;
+  height: 353px;
+}
+
+.objective-card {
+  margin-top: 20px;
+  padding: 20px;
+  height: 684px;
+}
+
+.item-card {
+  box-shadow: none;
+  height: 66px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #0081C533;
+
+  p {
+    font-weight: bold;
+    font-size: 15px;
+    position: relative;
+    top: 18px;
+    right: 15px;
+  }
+}
+
+.icon-wrapper.bookmark {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 11px;
+  left: 11px;
+  padding: 10px;
+  --ekc-icon-size: 20px;
+  background: linear-gradient(90.9deg, #0081C5 3.21%, #6DB657 99.91%);
+  box-shadow: 0px 4px 18px 0px #0081C540;
+
+  ekc-icon {
+    background: white;
+  }
+}
+
+.arrow-wrapper {
+  position: relative;
+  top: 18px;
+  right: 15px;
+}
