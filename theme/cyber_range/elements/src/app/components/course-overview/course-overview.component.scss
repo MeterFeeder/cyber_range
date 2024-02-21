@@ -1,7 +1,8 @@
 .course-overview-container {
     // TODO fix this so that content is not beneath left nav
-    margin-left: 10%;
+    // margin-left: 10%;
     font-family: Inter, sans-serif;
+    max-width: 1076px;
 }
 
 h2,
@@ -56,14 +57,14 @@ h3 {
 .form-control {
     border-radius: 7px;
     background-color: var(--color-mid-blue-background);
-    color: var(--blue-text);
+    color: var(--color-primary);
     border: none;
 }
 
 .input-group-text {
     background-color: #212B6614;
     border: none;
-    color: #212B66;
+    color: var(--color-primary);
 }
 
 .list-container {
@@ -73,7 +74,7 @@ h3 {
 
 ul {
     list-style-type: none;
-    color: var(--blue-text);
+    color: var(--color-primary);
     margin: 0;
     padding: 0;
 }
@@ -94,19 +95,59 @@ li {
 }
 
 .line-item-secondary-text {
-    font-family: Gotham, sans-seif;
+    font-family: Gotham, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 14px;
     letter-spacing: 0px;
     color: var(--mid-dark-text);
-    padding-left: 1.5em;
+    padding-left: 1.75em;
 }
 
 li:last-child {
     border-bottom: none;
+    padding-bottom: 0.5em;
 }
 
-.bullet {
-    font-size: 2em;
+.content {
+    width: 223px;
+    height: 193.02px;
+}
+
+.card-body {
+    margin: 40px 17px;
+}
+
+.number-circle {
+    background-color: var(--color-primary);
+    border-radius: 100%;
+    width: 2em;
+    height: 2em;
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5em;
+}
+
+.tertiary {
+    background-color: var(--color-tertiary);
+}
+
+.secondary {
+    background-color: var(--color-secondary);
+}
+
+.danger {
+    background-color: var(--color-danger);
+}
+
+.card-text {
+    font-family: Gotham;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--mid-dark-text);
 }
