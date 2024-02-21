@@ -1,7 +1,4 @@
 <div class="course-overview-container">
-
-
-
     <h2>Introduction to Course #1</h2>
     <div class="course-summary">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -13,10 +10,17 @@
         <div class="course-title">Course #1 Name</div>
     </div>
 
-    <div>
+    <div class="row">
         <!-- Explore Colum -->
-        <div>
+        <div class="col col-2">
             <h3>EXPLORE BY:</h3>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><ekc-icon type="magnifyingglass"></ekc-icon></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Search here" aria-label="Search here">
+            </div>
             <ul>
                 <li>
                     <p>One Line Item</p>
@@ -41,7 +45,7 @@
             </ul>
         </div>
         <!-- Rows of course content -->
-        <div>
+        <div class="col">
             <!-- Modules -->
             <div>
                 <h3>Modules</h3>

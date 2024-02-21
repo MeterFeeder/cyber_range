@@ -2,11 +2,10 @@
     // TODO fix this so that content is not beneath left nav
     margin-left: 10%;
     font-family: Inter, sans-serif;
-    max-width: 1076px;
-    ;
 }
 
-h2, h3 {
+h2,
+h3 {
     font-family: Metropolis;
     color: var(--dark-text);
     font-weight: 700;
@@ -27,6 +26,7 @@ h3 {
 
 .course-summary {
     font-size: 15px;
+    max-width: 1076px;;
 }
 
 .course-header-image {
@@ -53,3 +53,16 @@ h3 {
     letter-spacing: 0em;
     text-align: center;
 }
+
+.form-control {
+    border-radius: 7px;
+    background-color: #212B6614;
+    color: #212B66;
+    border: none;
+}
+
+.input-group-text {
+    background-color: #212B6614;
+    border: none;
+    color: #212B66;
+  }

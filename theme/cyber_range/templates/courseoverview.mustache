@@ -53,9 +53,13 @@
 <body id="course-overview">
 {{> theme_cyber_range/navbar }}
 {{> core/local/toast/wrapper}}
+
 <div class="height-100 bg-light mt-3">
   <div class="wrapper">
-    <ekc-course-overview></ekc-course-overview>
+    {{> theme_cyber_range/partials/search }}
+    <div class="container mb-3">
+      <ekc-course-overview></ekc-course-overview>
+    </div>
   </div>
 </div>
 
