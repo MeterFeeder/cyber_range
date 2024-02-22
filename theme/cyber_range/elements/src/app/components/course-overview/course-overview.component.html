@@ -42,6 +42,77 @@
 
         <!-- Rows of course content -->
         <div class="col col-9">
+            <!-- Test JS Carousel -->
+            <div style="background-color: dodgerblue">
+                <h3>Modules</h3>
+                <div class="row">
+                    <div class="col">
+                        <div class="card content">
+                            <div class="card-body">
+                                <div class="number-circle">{{tempModules[0].number}}</div>
+                                <h3 class="card-title">{{tempModules[0].title}}</h3>
+                                <div class="card-text">{{tempModules[0].description}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card content">
+                            <div class="card-body">
+                                <div class="number-circle">{{tempModules[1].number}}</div>
+                                <h3 class="card-title">{{tempModules[1].title}}</h3>
+                                <div class="card-text">{{tempModules[1].description}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card content">
+                            <div class="card-body">
+                                <div class="number-circle">{{tempModules[2].number}}</div>
+                                <h3 class="card-title">{{tempModules[2].title}}</h3>
+                                <div class="card-text">{{tempModules[2].description}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="btn bt-success number-circle success" (onClick)="advance()">
+                            <ekc-icon type="arrow-right-1-2"></ekc-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Bootstrap Carousel -->
+            <div style="background-color: aliceblue;">
+
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <!-- removed w-100 class -->
+                            <img src="https://placehold.co/100" class="d-block" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://placehold.co/110" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://placehold.co/120" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
             <!-- Modules -->
             <div>
                 <h3>Modules</h3>
@@ -74,6 +145,12 @@
                                 <h3 class="card-title">Module Title</h3>
                                 <div class="card-text">Description of module</div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="number-circle success">
+                            <ekc-icon type="arrow-right-1-2"></ekc-icon>
                         </div>
                     </div>
                 </div>
