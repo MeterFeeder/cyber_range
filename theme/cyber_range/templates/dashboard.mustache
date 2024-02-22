@@ -1,18 +1,16 @@
 
 {{> theme_cyber_range/partials/head }}
 
-<body id="dashboard">
+<body {{{ bodyattributes }}}>
 {{> theme_cyber_range/navbar }}
 {{> core/local/toast/wrapper}}
-
 <div class="height-100 bg-light mt-3">
   <div class="wrapper">
     {{> theme_cyber_range/partials/search }}
-
     <div class="container mb-3">
     <div class="onboarding">
         <section class="row">
-        <div class="col-3 stage">User Profile <ekc-icon class="complete" type="check-circle"></ekc-icon></div>
+        <div class="col-3 stage">User Profile <ekc-icon class="complete" type="star"></ekc-icon></div>
         <div class="col-3 stage">Skill Assessment</div>
         <div class="col-3 stage">Select Modules</div>
         <div class="col-3 stage">Tutorial Materials</div>
@@ -25,10 +23,50 @@
         </section>
     </div>
     </div>
-        {{> block_profile_snapshot/main }}
-    <div class="container">
+    {{{ output.standard_top_of_body_html }}}
+
+    <div id="page" class="container d-print-block">
+        {{{ output.full_header }}}
+            {{#secondarymoremenu}}
+                <div class="secondary-navigation">
+                    {{> core/moremenu}}
+                </div>
+            {{/secondarymoremenu}}
+        <div id="page-content" class="row pb-3 d-print-block">
+            <div id="region-main-box" class="col-12">
+                {{#hasregionmainsettingsmenu}}
+                <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
+                    <div> {{{ regionmainsettingsmenu }}} </div>
+                </div>
+                {{/hasregionmainsettingsmenu}}
+                <section id="region-main" {{#hasblocks}}class="has-blocks mb-3"{{/hasblocks}} aria-label="{{#str}}content{{/str}}">
+
+                    {{#hasregionmainsettingsmenu}}
+                        <div class="region_main_settings_menu_proxy"></div>
+                    {{/hasregionmainsettingsmenu}}
+                    {{{ output.course_content_header }}}
+                    {{#headercontent}}
+                        {{> core/activity_header }}
+                    {{/headercontent}}
+                    {{#overflow}}
+                        {{> core/url_select}}
+                    {{/overflow}}
+                    {{{ output.main_content }}}
+                    {{{ output.activity_navigation }}}
+                    {{{ output.course_content_footer }}}
+
+                </section>
+                {{#hasblocks}}
+                <section data-region="blocks-column" class="d-print-none" aria-label="{{#str}}blocks{{/str}}">
+                    {{{ addblockbutton }}}
+                    {{{ sidepreblocks }}}
+                </section>
+                {{/hasblocks}}
+            </div>
+        </div>
     </div>
-  </div>
+    {{{ output.standard_after_main_region_html }}}
+</div>
 </div>
 
 {{> theme_cyber_range/partials/footer }}
@@ -36,13 +74,8 @@
 </html>
 {{#js}}
 M.util.js_pending('theme_boost/loader');
-require(['theme_boost/loader'], function() {
+require(['theme_boost/loader', 'theme_boost/drawer'], function(Loader, Drawer) {
+    Drawer.init();
     M.util.js_complete('theme_boost/loader');
-});
-
-M.util.js_pending('theme_boost/drawer');
-require(['theme_boost/drawer'], function(drawer) {
-    drawer.init();
-    M.util.js_complete('theme_boost/drawer');
 });
 {{/js}}

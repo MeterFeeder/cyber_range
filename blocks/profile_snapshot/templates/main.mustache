@@ -1,17 +1,63 @@
-
-
-<div class="container">
-  <div class="row d-flex align-items-stretch">
-    <div class="col-12">
-      <section class="card">
-        <header class="card-header">
-          <h2>{{ tabTitle }}</h2>
-        </header>
-        <div class="card-body">
-          <ekc-profile-progression [competencies]="competencies" *ngIf="tab() == 'progression'"></ekc-profile-progression>
-          <ekc-profile-settings *ngIf="tab() == 'settings'"></ekc-profile-settings>
+<div class=" snapshot-wrapper">
+<section class="profile  col-md-4">
+    <div class="user-details">
+        <div class="avatar-wrapper">
+        <img [src]="avatar" alt="avatar" class="avatar" />
         </div>
-      </section>
+        <div class="user-wrapper">
+        <h3 class="name">{{ user.firstname }} {{user.lastname}}</h3>
+        <p class="role">{{ user.username }}</p>
+        </div>
     </div>
-  </div>
+</section>
+
+<section class="card col-md-4 gradient-primary">
+    <div class="card-header">
+    <ekc-icon type="book"></ekc-icon>
+    </div>
+    <div class="card-body">
+    <p class="value">{{ learning_hours }}</p>
+    <p class="name">{{#str}}learning_hours, block_profile_snapshot{{/str}}</p>
+    </div>
+</section>
+
+<section class="card col-md-4 gradient-success">
+    <div class="card-header">
+    <ekc-icon type="bookmark"></ekc-icon>
+    </div>
+    <div class="card-body">
+    <p class="value">{{ courses_completed }}</p>
+    <p class="name">{{#str}}courses_completed, block_profile_snapshot{{/str}}</p>
+    </div>
+</section>
+
+<section class="card col-md-4 gradient-secondary">
+    <div class="card-header">
+    <ekc-icon type="glass"></ekc-icon>
+    </div>
+    <div class="card-body">
+     <p class="value">{{ labs_completed }}</p>
+    <p class="name">{{#str}}labs_completed, block_profile_snapshot{{/str}}</p>
+    </div>
+</section>
+
+<section class="card col-md-4 gradient-primary">
+    <div class="card-header">
+    <ekc-icon type="book"></ekc-icon>
+    </div>
+    <div class="card-body">
+    <p class="value">{{ assessments_completed }}</p>
+    <p class="name">{{#str}}assessments_completed, block_profile_snapshot{{/str}}</p>
+    </div>
+</section>
+
+<section class="card col-md-4 gradient-danger">
+    <div class="card-header">
+    <ekc-icon type="hand-thumbs-up"></ekc-icon>
+    </div>
+    <div class="card-body">
+    <p class="value">{{ daily_streak }}</p>
+    <p class="name">{{#str}}daily_streak, block_profile_snapshot{{/str}}</p>
+    </div>
+</section>
 </div>

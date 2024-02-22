@@ -30,4 +30,10 @@ $string['headerconfig'] = 'Config section header';
 $string['labelfoo'] = 'Config label';
 $string['profile_snapshot:addinstance'] = 'Add a profile_snapshot block';
 $string['profile_snapshot:myaddinstance'] = 'Add a profile_snapshot block to my moodle';
-$string['pluginname'] = 'profile_snapshot';
+$string['pluginname'] = 'Profile Snapshot';
+
+$string['learning_hours'] = 'Total Learning Hours';
+$string['courses_completed'] = 'Courses Completed';
+$string['labs_completed'] = 'Labs Completed';
+$string['assessments_completed'] = 'Assessments Completed';
+$string['daily_streak'] = 'Daily Streak';

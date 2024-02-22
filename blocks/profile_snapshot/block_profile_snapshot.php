@@ -28,56 +28,45 @@ class block_profile_snapshot extends block_base {
 
     function init() {
         $this->title = get_string('pluginname', 'block_profile_snapshot');
+        
     }
 
     function get_content() {
-        global $CFG, $OUTPUT;
-
-        if ($this->content !== null) {
-            return $this->content;
-        }
-
-        if (empty($this->instance)) {
-            $this->content = '';
-            return $this->content;
-        }
+        global $DB, $CFG, $OUTPUT, $USER;
+        $id = optional_param('id', $USER->id, PARAM_INT);    // User id; -1 if creating new user.
+        $systemcontext = context_system::instance();
+        require_capability('moodle/user:update', $systemcontext);
+        $user = $DB->get_record('user', array('id' => $id), '*', MUST_EXIST);
 
         $this->content = new stdClass();
         $this->content->items = array();
         $this->content->icons = array();
-        $this->content->footer = '<p> This is the content of my block profile_snapshot</p>';
+        $this->content->footer = '';
 
-        // user/index.php expect course context, so get one if page has module context.
-        $currentcontext = $this->page->context->get_course_context(false);
-
-        if (! empty($this->config->text)) {
-            $this->content->text = $this->config->text;
-        }
-
-        $this->content = '';
-        if (empty($currentcontext)) {
-            return $this->content;
-        }
-        if ($this->page->course->id == SITEID) {
-            $this->context->text .= "site context";
-        }
-
-        if (! empty($this->config->text)) {
-            $this->content->text .= $this->config->text;
-        }
-
-        return $this->content;
+        $context = [
+            'user' => $user,
+            'learning_hours' => .03,
+            'courses_completed' => 0,
+            'labs_completed' => 0,
+            'assessments_completed' => 0,
+            'daily_streak' => 0,
+        ];
+        // echo '<pre>'; print_r($context); echo '</pre>';
+        $this->content->text = $OUTPUT->render_from_template('block_profile_snapshot/main', $context);
+        
+        return (object) $this->content;
     }
 
     // my moodle can only have SITEID and it's redundant here, so take it away
     public function applicable_formats() {
         return array('all' => false,
-                     'site' => true,
-                     'site-index' => true,
-                     'course-view' => true, 
+                     'site' => false,
+                     'site-index' => false,
+                     'course-view' => false, 
                      'course-view-social' => false,
-                     'mod' => true, 
-                     'mod-quiz' => false);
+                     'mod' => false, 
+                     'mod-quiz' => false,
+                     'my' => true);
     }
 
     public function instance_allow_multiple() {

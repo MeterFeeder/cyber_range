@@ -9,7 +9,7 @@ $tertiary: #0081C5;
 $success: #6DB657;
 $warning: #ffc409;
 $danger: #B80B4D;
-$dark-text: #494848; 
+$dark-text: #494848;
 $secondary-text: #5B5B5B;
 $light-text: #FFFFFF;
 $alert: #C60808;
@@ -38,7 +38,26 @@ $alert: #C60808;
   --color-success: #6DB657;
   --color-alert: #C60808;
   --color-mid-blue-background: #212B6614;
+
+  --color-gradient-primary:   linear-gradient(116.22deg, #212B66 0%, #0081C5 105.18%);
+  --color-gradient-secondary: linear-gradient(91.06deg, #0081C5 0.39%, #71B2DC 116.88%);
+  --color-gradient-success:   linear-gradient(91.06deg, #6DB657 0.39%, #ADDC71 116.88%);
+  --color-gradient-danger:    linear-gradient(91.06deg, #B80B4D 0.39%, #DC718B 116.88%);
 }
+
+.gradient-primary {
+  background: var(--color-gradient-primary);
+}
+.gradient-secondary {
+  background: var(--color-gradient-secondary);
+}
+.gradient-success {
+  background: var(--color-gradient-success);
+}
+.gradient-danger {
+  background: var(--color-gradient-danger);
+}
+
 
 body {
   padding-left: var(--nav-width);
@@ -191,6 +210,7 @@ h3 {
 @import 'styles/nav-bar.scss';
 @import 'styles/dashboard.component.scss';
 @import 'styles/auth.component.scss';
+@import 'styles/block_profile_snapshot.scss';
 
 .performanceinfo {
   color: white;
