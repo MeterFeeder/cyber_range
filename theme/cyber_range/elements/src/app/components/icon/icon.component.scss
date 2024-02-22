@@ -1,3 +1,21 @@
+// libsass removed the image-url function as of 3.x
+// This is a basic replacement I have used.
+
+$assets-folder: "/theme/cyber_range/elements/dist/elements/browser";
+
+@function image-url ($url) {
+    @return url(quote($assets-folder + '/' + unquote($url)));
+}
+
+@function quote ($url) {
+  @return "'" + $url + "'";
+}
+
+.icon-light {
+  background-color: white!important;
+  min-width: 30px !important;
+  min-height: 30px !important;
+}
 :host {
   height: var(--ekc-icon-size,  24px);
   width: var(--ekc-icon-size,  24px);
@@ -8,84 +26,77 @@
   mask-position: center;
   mask-repeat: no-repeat;
   display: inline-block;
-}
 
-.icon-light {
-  background-color: white!important;
-  min-width: 30px !important;
-  min-height: 30px !important;
-}
-:host {
-  --icon-star: url('./svg/star.svg');
-  --icon-activity: url('./svg/activity.svg');
-  --icon-admin_panel_settings: url('./svg/admin_panel_settings.svg');
-  --icon-analytics: url('./svg/analytics.svg');
-  --icon-app: url('./svg/app.svg');
-  --icon-arrow-right-1-1: url('./svg/arrow-right-1-1.svg');
-  --icon-arrow-right-1-2: url('./svg/arrow-right-1-2.svg');
-  --icon-arrow-right-1-3: url('./svg/arrow-right-1-3.svg');
-  --icon-arrow-right-1: url('./svg/arrow-right-1.svg');
-  --icon-arrows-collapse: url('./svg/arrows-collapse.svg');
-  --icon-book-1: url('./svg/book-1.svg');
-  --icon-book-circlebkgd: url('./svg/book-circlebkgd.svg');
-  --icon-book: url('./svg/book.svg');
-  --icon-bookmark-star: url('./svg/bookmark-star.svg');
-  --icon-bookmark: url('./svg/bookmark.svg');
-  --icon-bootstrap: url('./svg/bootstrap.svg');
-  --icon-braces: url('./svg/braces.svg');
-  --icon-calendar-1: url('./svg/calendar-1.svg');
-  --icon-caret-down-fill: url('./svg/caret-down-fill.svg');
-  --icon-caret-left-fill: url('./svg/caret-left-fill.svg');
-  --icon-caret-right-fill: url('./svg/caret-right-fill.svg');
-  --icon-caret-up-fill: url('./svg/caret-up-fill.svg');
-  --icon-chat-left-dots: url('./svg/chat-left-dots.svg');
-  --icon-checkbox: url('./svg/checkbox.svg');
-  --icon-chevron-double-up: url('./svg/chevron-double-up.svg');
-  --icon-controller: url('./svg/controller.svg');
-  --icon-currency-dollar: url('./svg/currency-dollar.svg');
-  --icon-document-circlebkgd: url('./svg/document-circlebkgd.svg');
-  --icon-dots: url('./svg/dots.svg');
-  --icon-eye-slash: url('./svg/eye-slash.svg');
-  --icon-file: url('./svg/file.svg');
-  --icon-gear-wide-connected: url('./svg/gear-wide-connected.svg');
-  --icon-gear: url('./svg/gear.svg');
-  --icon-glass: url('./svg/glass.svg');
-  --icon-grade: url('./svg/grade.svg');
-  --icon-graph-up-arrow: url('./svg/graph-up-arrow.svg');
-  --icon-hand-thumbs-up: url('./svg/hand-thumbs-up.svg');
-  --icon-headset-circlebkgd: url('./svg/headset-circlebkgd.svg');
-  --icon-headset: url('./svg/headset.svg');
-  --icon-home-circlebkgd: url('./svg/home-circlebkgd.svg');
-  --icon-home: url('./svg/home.svg');
-  --icon-lock: url('./svg/lock.svg');
-  --icon-magnifyingglass: url('./svg/magnifyingglass.svg');
-  --icon-megaphone: url('./svg/megaphone.svg');
-  --icon-notification-1: url('./svg/notification-1.svg');
-  --icon-pen: url('./svg/pen.svg');
-  --icon-pencil: url('./svg/pencil.svg');
-  --icon-person-plus-fill: url('./svg/person-plus-fill.svg');
-  --icon-person-video3: url('./svg/person-video3.svg');
-  --icon-person-workspace: url('./svg/person-workspace.svg');
-  --icon-plus-circle-fill: url('./svg/plus-circle-fill.svg');
-  --icon-plus-circle: url('./svg/plus-circle.svg');
-  --icon-plus: url('./svg/plus.svg');
-  --icon-profile-circlebkgd: url('./svg/profile-circlebkgd.svg');
-  --icon-profile: url('./svg/profile.svg');
-  --icon-recycle: url('./svg/recycle.svg');
-  --icon-regularbook-content: url('./svg/regularbook-content.svg');
-  --icon-shield-fill-check: url('./svg/shield-fill-check.svg');
-  --icon-shield-fill-exclamation: url('./svg/shield-fill-exclamation.svg');
-  --icon-shield-fill-minus: url('./svg/shield-fill-minus.svg');
-  --icon-shield-fill-plus: url('./svg/shield-fill-plus.svg');
-  --icon-shield-fill-x: url('./svg/shield-fill-x.svg');
-  --icon-shield-fill: url('./svg/shield-fill.svg');
-  --icon-stopwatch-1: url('./svg/stopwatch-1.svg');
-  --icon-stopwatch-circlebkgd: url('./svg/stopwatch-cirlclebkgd.svg');
-  --icon-stopwatch: url('./svg/stopwatch.svg');
-  --icon-suitcase: url('./svg/suitcase.svg');
-  --icon-suitcase-circlebkgd: url('./svg/suitecase-circlebkgd.svg');
-  --icon-trophy-circlebkgd: url('./svg/trophy-circlebkgd.svg');
-  --icon-trophy: url('./svg/trophy.svg');
-  --icon-upload: url('.//svg/upload.svg');
-  --icon-check-circle: url('./svg/check-circle.svg');
+  --icon-star: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/star.svg');
+  --icon-activity: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/activity.svg');
+  --icon-admin_panel_settings: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/admin_panel_settings.svg');
+  --icon-analytics: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/analytics.svg');
+  --icon-app: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/app.svg');
+  --icon-arrow-right-1-1: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/arrow-right-1-1.svg');
+  --icon-arrow-right-1-2: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/arrow-right-1-2.svg');
+  --icon-arrow-right-1-3: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/arrow-right-1-3.svg');
+  --icon-arrow-right-1: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/arrow-right-1.svg');
+  --icon-arrows-collapse: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/arrows-collapse.svg');
+  --icon-book-1: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/book-1.svg');
+  --icon-book-circlebkgd: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/book-circlebkgd.svg');
+  --icon-book: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/book.svg');
+  --icon-bookmark-star: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/bookmark-star.svg');
+  --icon-bookmark: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/bookmark.svg');
+  --icon-bootstrap: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/bootstrap.svg');
+  --icon-braces: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/braces.svg');
+  --icon-calendar-1: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/calendar-1.svg');
+  --icon-caret-down-fill: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/caret-down-fill.svg');
+  --icon-caret-left-fill: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/caret-left-fill.svg');
+  --icon-caret-right-fill: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/caret-right-fill.svg');
+  --icon-caret-up-fill: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/caret-up-fill.svg');
+  --icon-chat-left-dots: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/chat-left-dots.svg');
+  --icon-checkbox: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/checkbox.svg');
+  --icon-chevron-double-up: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/chevron-double-up.svg');
+  --icon-controller: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/controller.svg');
+  --icon-currency-dollar: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/currency-dollar.svg');
+  --icon-document-circlebkgd: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/document-circlebkgd.svg');
+  --icon-dots: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/dots.svg');
+  --icon-eye-slash: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/eye-slash.svg');
+  --icon-file: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/file.svg');
+  --icon-gear-wide-connected: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/gear-wide-connected.svg');
+  --icon-gear: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/gear.svg');
+  --icon-glass: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/glass.svg');
+  --icon-grade: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/grade.svg');
+  --icon-graph-up-arrow: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/graph-up-arrow.svg');
+  --icon-hand-thumbs-up: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/hand-thumbs-up.svg');
+  --icon-headset-circlebkgd: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/headset-circlebkgd.svg');
+  --icon-headset: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/headset.svg');
+  --icon-home-circlebkgd: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/home-circlebkgd.svg');
+  --icon-home: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/home.svg');
+  --icon-lock: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/lock.svg');
+  --icon-magnifyingglass: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/magnifyingglass.svg');
+  --icon-megaphone: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/megaphone.svg');
+  --icon-notification-1: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/notification-1.svg');
+  --icon-pen: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/pen.svg');
+  --icon-pencil: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/pencil.svg');
+  --icon-person-plus-fill: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/person-plus-fill.svg');
+  --icon-person-video3: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/person-video3.svg');
+  --icon-person-workspace: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/person-workspace.svg');
+  --icon-plus-circle-fill: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/plus-circle-fill.svg');
+  --icon-plus-circle: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/plus-circle.svg');
+  --icon-plus: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/plus.svg');
+  --icon-profile-circlebkgd: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/profile-circlebkgd.svg');
+  --icon-profile: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/profile.svg');
+  --icon-recycle: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/recycle.svg');
+  --icon-regularbook-content: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/regularbook-content.svg');
+  --icon-shield-fill-check: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/shield-fill-check.svg');
+  --icon-shield-fill-exclamation: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/shield-fill-exclamation.svg');
+  --icon-shield-fill-minus: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/shield-fill-minus.svg');
+  --icon-shield-fill-plus: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/shield-fill-plus.svg');
+  --icon-shield-fill-x: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/shield-fill-x.svg');
+  --icon-shield-fill: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/shield-fill.svg');
+  --icon-stopwatch-1: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/stopwatch-1.svg');
+  --icon-stopwatch-circlebkgd: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/stopwatch-cirlclebkgd.svg');
+  --icon-stopwatch: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/stopwatch.svg');
+  --icon-suitcase: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/suitcase.svg');
+  --icon-suitcase-circlebkgd: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/suitecase-circlebkgd.svg');
+  --icon-trophy-circlebkgd: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/trophy-circlebkgd.svg');
+  --icon-trophy: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/trophy.svg');
+  --icon-upload: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/upload.svg');
+  --icon-check-circle: url('/theme/cyber_range/elements/dist/elements/browser/assets/svg/check-circle.svg');
 }

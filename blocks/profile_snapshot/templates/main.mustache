@@ -1,0 +1,69 @@
+<div class=" snapshot-wrapper">
+<section class="profile  col-md-4">
+    <div class="user-details">
+        <div class="avatar-wrapper">
+        <span class="avatars">
+    {{#avatardata}}
+        <span class="avatar {{classes}}">
+            {{{content}}}
+        </span>
+    {{/avatardata}}
+</span>
+        </div>
+        <div class="user-wrapper">
+        <h3 class="name">{{ userfullname }}</h3>
+        <p class="role">{{ user.username }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="card col-md-4 gradient-primary">
+    <div class="card-header">
+    <ekc-icon type="book"></ekc-icon>
+    </div>
+    <div class="card-body">
+    <p class="value">{{ learning_hours }}</p>
+    <p class="name">{{#str}}learning_hours, block_profile_snapshot{{/str}}</p>
+    </div>
+</section>
+
+<section class="card col-md-4 gradient-success">
+    <div class="card-header">
+    <ekc-icon type="bookmark"></ekc-icon>
+    </div>
+    <div class="card-body">
+    <p class="value">{{ courses_completed }}</p>
+    <p class="name">{{#str}}courses_completed, block_profile_snapshot{{/str}}</p>
+    </div>
+</section>
+
+<section class="card col-md-4 gradient-secondary">
+    <div class="card-header">
+    <ekc-icon type="glass"></ekc-icon>
+    </div>
+    <div class="card-body">
+     <p class="value">{{ labs_completed }}</p>
+    <p class="name">{{#str}}labs_completed, block_profile_snapshot{{/str}}</p>
+    </div>
+</section>
+
+<section class="card col-md-4 gradient-primary">
+    <div class="card-header">
+    <ekc-icon type="book"></ekc-icon>
+    </div>
+    <div class="card-body">
+    <p class="value">{{ assessments_completed }}</p>
+    <p class="name">{{#str}}assessments_completed, block_profile_snapshot{{/str}}</p>
+    </div>
+</section>
+
+<section class="card col-md-4 gradient-danger">
+    <div class="card-header">
+    <ekc-icon type="hand-thumbs-up"></ekc-icon>
+    </div>
+    <div class="card-body">
+    <p class="value">{{ daily_streak }}</p>
+    <p class="name">{{#str}}daily_streak, block_profile_snapshot{{/str}}</p>
+    </div>
+</section>
+</div>
