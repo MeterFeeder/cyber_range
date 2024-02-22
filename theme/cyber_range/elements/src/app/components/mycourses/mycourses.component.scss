@@ -32,7 +32,31 @@ h4 {
 }
 
 .category-select {
-  width: 50%;
+  width: 80%;
+
+  button {
+    background: #212B6614;
+    border-radius: 100px;
+    color: #212B66;
+    border: 0px;
+    width: 150px;
+    padding-left: 0px;
+    padding-right: 0px;
+
+    span {
+      background: linear-gradient(90.9deg, #0081C5 3.21%, #6DB657 99.91%);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      float: left;
+      font-size: 12px;
+      color: white;
+      padding-top: 4px;
+      position: relative;
+      left: 5px;
+    }
+
+  }
 }
 
 .course-categories {
