@@ -32,7 +32,7 @@ class block_profile_snapshot extends block_base {
     }
 
     function get_content() {
-        global $DB, $CFG, $OUTPUT, $USER;
+        global $DB, $CFG, $OUTPUT, $USER, $PAGE;
         $id = optional_param('id', $USER->id, PARAM_INT);    // User id; -1 if creating new user.
         $systemcontext = context_system::instance();
         require_capability('moodle/user:update', $systemcontext);
@@ -43,6 +43,8 @@ class block_profile_snapshot extends block_base {
         $this->content->icons = array();
         $this->content->footer = '';
 
+        $info = user_get_user_navigation_info($USER, $PAGE);
+
         $context = [
             'user' => $user,
             'learning_hours' => .03,
@@ -50,6 +52,11 @@ class block_profile_snapshot extends block_base {
             'labs_completed' => 0,
             'assessments_completed' => 0,
             'daily_streak' => 0,
+            'avatardata' => [
+                'content' => $info->metadata['useravatar'],
+                'classes' => 'current'
+            ],
+            'userfullname' => $info->metadata['realuserfullname'] ?? $info->metadata['userfullname']
         ];
         // echo '<pre>'; print_r($context); echo '</pre>';
         $this->content->text = $OUTPUT->render_from_template('block_profile_snapshot/main', $context);

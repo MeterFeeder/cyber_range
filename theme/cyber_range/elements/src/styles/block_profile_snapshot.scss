@@ -52,6 +52,7 @@
     }
 
     .col-md-4 {
+      padding: 0;
       box-shadow: none;
       width: calc(33.33333333% - 16px);
     }
@@ -75,6 +76,12 @@
       border-radius: 50%;
       margin: 0 auto;
       display: block;
+
+      .userinitials {
+        width: 64px;
+        height: 64px;
+        font-size: 30px;
+      }
     }
 
     .user-wrapper {

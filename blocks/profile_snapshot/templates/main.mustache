@@ -2,10 +2,16 @@
 <section class="profile  col-md-4">
     <div class="user-details">
         <div class="avatar-wrapper">
-        <img [src]="avatar" alt="avatar" class="avatar" />
+        <span class="avatars">
+    {{#avatardata}}
+        <span class="avatar {{classes}}">
+            {{{content}}}
+        </span>
+    {{/avatardata}}
+</span>
         </div>
         <div class="user-wrapper">
-        <h3 class="name">{{ user.firstname }} {{user.lastname}}</h3>
+        <h3 class="name">{{ userfullname }}</h3>
         <p class="role">{{ user.username }}</p>
         </div>
     </div>
