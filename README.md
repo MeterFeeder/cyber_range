@@ -4,7 +4,7 @@
 ```
 ssh-keygen -t ed25519 -C "dan@meterfeeder.com"
 ```
-Password is same as the admin login for Moodle BD.
+Password is same as the admin login for Moodle BD. The key is in the `/app/data` directory.
 
 ## Git Clone:
 ```
