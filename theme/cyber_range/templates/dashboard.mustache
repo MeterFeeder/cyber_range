@@ -54,7 +54,7 @@
   </div>
 </div>
     <div id="page" class="container d-print-block">
-        {{{ output.full_header }}}
+       
             {{#secondarymoremenu}}
                 <div class="secondary-navigation">
                     {{> core/moremenu}}
@@ -67,7 +67,7 @@
                     <div> {{{ regionmainsettingsmenu }}} </div>
                 </div>
                 {{/hasregionmainsettingsmenu}}
-                <section id="region-main" {{#hasblocks}}class="has-blocks mb-3"{{/hasblocks}} aria-label="{{#str}}content{{/str}}">
+                <section id="region-main" {{#hasblocks}}class="col-8 has-blocks mb-3"{{/hasblocks}} aria-label="{{#str}}content{{/str}}">
 
                     {{#hasregionmainsettingsmenu}}
                         <div class="region_main_settings_menu_proxy"></div>
@@ -85,7 +85,7 @@
 
                 </section>
                 {{#hasblocks}}
-                <section data-region="blocks-column" class="d-print-none" aria-label="{{#str}}blocks{{/str}}">
+                <section data-region="blocks-column" class=" col-4 d-print-none blocks-right" aria-label="{{#str}}blocks{{/str}}">
                     {{{ addblockbutton }}}
                     {{{ sidepreblocks }}}
                 </section>
