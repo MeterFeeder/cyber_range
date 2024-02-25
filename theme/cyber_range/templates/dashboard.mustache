@@ -25,6 +25,34 @@
     </div>
     {{{ output.standard_top_of_body_html }}}
 
+<div class="container">
+  <div class="hero-line row d-flex align-items-stretch">
+    <section class=" col-md-8">
+      <div class=" snapshot-wrapper card profile_snapshot">
+        <div class=" p-3">
+          <h5 class="card-title">{{profile_snapshot.title}}</h5>
+          <div class="card-text content">
+            {{{ profile_snapshot.html }}}
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="announcements col-md-4 d-flex align-items-stretch">
+      <section class="profile card">
+        <header class="card-header">
+          <h2>Announcements</h2>
+        </header>
+        <div class="card-body">
+          <h4>May 18th 2023</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          <h4>May 18th 2023</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          <h4>More</h4>
+        </div>
+      </section>
+    </section>
+  </div>
+</div>
     <div id="page" class="container d-print-block">
         {{{ output.full_header }}}
             {{#secondarymoremenu}}
