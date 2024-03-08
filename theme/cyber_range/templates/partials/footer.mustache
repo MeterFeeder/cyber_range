@@ -34,10 +34,10 @@
         }
     }
 }}
-<div style="display:none">
-    {{ output.main_content}}
+<div class="container">
+    {{{output.main_content}}}
 </div>
-<footer id="page-footer" class="footer-popover bg-white">
+<footer id="page-footer" class="content footer-popover bg-white">
     <div data-region="footer-container-popover">
         {{#output.has_communication_links}}
             <button onclick="window.open('{{output.communication_url}}', '_blank', 'noreferrer')" class="btn btn-icon bg-primary text-white icon-no-margin btn-footer-communication" aria-label="{{#str}}communicationroomlink, course{{/str}}">
@@ -90,7 +90,7 @@
     </div>
 
     <div class="footer-content-debugging footer-dark bg-dark text-light">
-        <div class="container-fluid footer-dark-inner">
+        <div class="container footer-dark-inner">
             {{{ output.debug_footer_html }}}
         </div>
     </div>

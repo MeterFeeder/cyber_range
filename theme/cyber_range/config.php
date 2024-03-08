@@ -63,15 +63,15 @@ $THEME->layouts = [
         'defaultregion' => 'side-pre',
     ),
     // Main course page.
-    'course' => array(
-        'file' => 'courseoverview.php',
-        'regions' => array('side-pre'),
-        'defaultregion' => 'side-pre',
-        'options' => array('langmenu' => true),
-    ),
+    'course' => [
+        'file' => 'course.php',
+        'regions' => $courselayoutregions,
+        'defaultregion' => 'side-post',
+        'options' => ['langmenu' => true],
+    ],
     // My courses page.
     'mycourses' => array(
-        'file' => 'mycourses.php',
+        'file' => 'drawers.php',
         'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
         'options' => array('nonavbar' => true),
