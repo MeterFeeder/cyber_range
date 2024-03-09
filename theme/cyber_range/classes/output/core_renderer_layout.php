@@ -10,10 +10,18 @@ use stdClass;
  */
 trait core_renderer_layout
 {
+    public function cr_header() {
+        global $OUTPUT;
+        echo $OUTPUT->render_from_template('theme_cyber_range/partials/head', []);
+    }
     public function course_layout() {
         global $COURSE;
         $themesettings = \theme_adaptable\toolbox::get_settings();
 
+
+        $currentpage = theme_adaptable_get_current_page();
+        var_dump($currentpage);
+        
         $sidepostdrawer = true;
         $movesidebartofooter = !empty(($themesettings->coursepagesidebarinfooterenabled)) ? 2 : 1;
         if ((!empty($movesidebartofooter)) && ($movesidebartofooter == 2)) {
@@ -23,6 +31,8 @@ trait core_renderer_layout
         // Include header.
         // $this->yesheader($sidepostdrawer);
 
+        $this->cr_header();
+        echo '<body>';
         // Include secondary navigation.
         [$secondarynavigation, $overflow] = ['', '']; // $this->secondarynav();
 
