@@ -14,7 +14,7 @@ class course_renderer extends \core_course_renderer
     public function render_course_category($course_category)
     {
         global $OUTPUT;
-        echo "hello, world!";
+        echo "TODO: generated in \course_renderer::render_course_category()";
     }
 
     // /** invoked from /course/index.php */
