@@ -39,12 +39,16 @@ class course_renderer extends \core_course_renderer
 
     private function single_category_content($category)
     {
-        return '<p>This is one category <strong>Figma Screen 30</strong></p>';
+        // return '<p>This is one category <strong>Figma Screen 30</strong></p>';
+        $templatecontext = [];
+        $output = $this->render_from_template('theme_cyber_range/single_category_content', $templatecontext);
+        return $output;
     }
 
     private function categories_search_content($categories)
     {
         global $OUTPUT;
+        // $OUTPUT->body_attributes('categories');
         $templatecontext = [];
 
         // Show the action bar
