@@ -17,10 +17,34 @@ function fix_path($node, $attr)
     $node->setAttribute($attr, '/theme/cyber_range/elements/dist/elements/browser/' . $path);
     return $node;
 }
+
+function make_nav_link($key, $title, $url, $icon = '')
+{
+    global $PAGE;
+    $active = $PAGE->url->compare($url, URL_MATCH_BASE);
+    return [
+        'key' => $key,
+        'title' => $title,
+        'url' => $url,
+        'icon' => $icon,
+        'isactive' => $active,
+        'hasChildren' => false,
+    ];
+}
+function merge_link($array, $new, $position = -1)
+{
+    return array_merge(array_slice($array, 0, $position), [$new], array_slice($array, $position));
+}
 function theme_cyber_range_get_angular_content($templatecontext)
 {
 
-    if (array_key_exists('primarymoremenu', $templatecontext) && array_key_exists('nodearray', $templatecontext['primarymoremenu'])) {
+    if (array_key_exists('primarymoremenu', $templatecontext) && array_key_exists('nodearray', $templatecontext['primarymoremenu']))
+    {
+        // Add the course categories link to the primary more menu.
+        $link = make_nav_link('categories', 'Categories', new moodle_url('/course'));
+        $templatecontext["primarymoremenu"]['nodearray'] = merge_link($templatecontext["primarymoremenu"]['nodearray'], $link, -1);
+        
+
         $templatecontext["primarymoremenu"]['nodearray'] = theme_cyber_range_add_menu_icons($templatecontext["primarymoremenu"]['nodearray']);
     }
 
@@ -65,6 +89,9 @@ function theme_cyber_range_add_menu_icons($items) {
 
     for ($i = 0; $i < count($items); $i++) {
         switch ($items[$i]['key']) {
+            case 'categories': 
+                $items[$i]['ekc'] = 'book-circlebkgd';
+                break; 
             case 'home':
                 $items[$i]['ekc'] = 'home-circlebkgd';
                 break;
@@ -72,10 +99,10 @@ function theme_cyber_range_add_menu_icons($items) {
                 $items[$i]['ekc'] = 'gear';
                 break;
             case 'courses':
-                $items[$i]['ekc'] = 'book-circlebkgd';
+                $items[$i]['ekc'] = 'document-circlebkgd';
                 break;
             case 'mycourses':
-                $items[$i]['ekc'] = 'book-circlebkgd';
+                $items[$i]['ekc'] = 'document-circlebkgd';
                 break;
             case 'myhome':
                 $items[$i]['ekc'] = 'profile-circlebkgd';

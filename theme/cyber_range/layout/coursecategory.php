@@ -30,7 +30,7 @@ require_once($CFG->dirroot . '/theme/cyber_range/classes/output/profile_snapshot
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();
 
-$extraclasses = ['dashboard'];
+$extraclasses = ['categories'];
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
