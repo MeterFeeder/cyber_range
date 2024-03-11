@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * A two column layout for the cyber_range theme.
+ * A two column layout for the boost theme.
  *
- * @package   theme_cyber_range
+ * @package   theme_boost
  * @copyright 2016 Damyon Wiese
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -25,16 +25,15 @@
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/behat/lib.php');
+require_once($CFG->dirroot . '/theme/cyber_range/classes/output/profile_snapshot.php');
 
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();
 
-$extraclasses = ['courseoverview'];
+$extraclasses = ['categories'];
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
-
-$background = $OUTPUT->image_url('matrix-o', 'theme');
 
 $secondarynavigation = false;
 $overflow = '';
@@ -74,7 +73,8 @@ $templatecontext = theme_cyber_range_get_angular_content([
     'headercontent' => $headercontent,
     'overflow' => $overflow,
     'addblockbutton' => $addblockbutton,
-    'background' => $background,
+    'profile_snapshot' => new \theme\cyber_range\classes\output\profile_snapshot()
 ]);
+    
+echo $OUTPUT->render_from_template('theme_cyber_range/empty', $templatecontext);
 
-echo $OUTPUT->render_from_template('theme_cyber_range/courseoverview', $templatecontext);

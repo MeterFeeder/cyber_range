@@ -7,52 +7,10 @@
 <div class="height-100 bg-light mt-3">
   <div class="wrapper">
     {{> theme_cyber_range/partials/search }}
-    <div class="container mb-3">
-    <div class="onboarding">
-        <section class="row">
-        <div class="col-3 stage">User Profile <ekc-icon class="complete" type="star"></ekc-icon></div>
-        <div class="col-3 stage">Skill Assessment</div>
-        <div class="col-3 stage">Select Modules</div>
-        <div class="col-3 stage">Tutorial Materials</div>
-        </section>
-        <section class="progress-wrapper">
-        <div class="progress mb-1 ">
-            <div class="progress-bar bg-success w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100"></div>
-        </div>
-        </section>
-    </div>
-    </div>
+   
     {{{ output.standard_top_of_body_html }}}
 
-<div class="container">
-  <div class="hero-line row d-flex align-items-stretch">
-    <section class=" col-md-8">
-      <div class=" snapshot-wrapper card profile_snapshot">
-        <div class=" p-3">
-          <h5 class="card-title">{{profile_snapshot.title}}</h5>
-          <div class="card-text content">
-            {{{ profile_snapshot.html }}}
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="announcements col-md-4 d-flex align-items-stretch">
-      <section class="profile card">
-        <header class="card-header">
-          <h2>Announcements</h2>
-        </header>
-        <div class="card-body">
-          <h4>May 18th 2023</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-          <h4>May 18th 2023</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-          <h4>More</h4>
-        </div>
-      </section>
-    </section>
-  </div>
-</div>
+
     <div id="page" class="container d-print-block">
        
             {{#secondarymoremenu}}

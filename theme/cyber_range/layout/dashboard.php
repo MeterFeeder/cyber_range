@@ -25,6 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/behat/lib.php');
+require_once($CFG->dirroot . '/theme/cyber_range/classes/output/profile_snapshot.php');
 
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();
@@ -72,6 +73,8 @@ $templatecontext = theme_cyber_range_get_angular_content([
     'headercontent' => $headercontent,
     'overflow' => $overflow,
     'addblockbutton' => $addblockbutton,
+    'profile_snapshot' => new \theme\cyber_range\classes\output\profile_snapshot()
 ]);
+    
 echo $OUTPUT->render_from_template('theme_cyber_range/dashboard', $templatecontext);
 

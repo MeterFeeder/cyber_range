@@ -1,69 +1,274 @@
 {{!
-    This file is part of Moodle - http://moodle.org/
+This file is part of Moodle - http://moodle.org/
 
-    Moodle is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+Moodle is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-    Moodle is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+Moodle is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License
+along with Moodle. If not, see
+<http: //www.gnu.org/licenses />.
 }}
 {{!
-    @template theme_boost/columns2
+@template theme_boost/columns2
 
-    Admin time setting template.
+Admin time setting template.
 
-    Boost 2 column layout template.
+Boost 2 column layout template.
 
-    Context variables required for this template:
-    * sitename - The name of the site
-    * output - The core renderer for the page
-    * bodyattributes - attributes for the body tag as a string of html attributes
-    * sidepreblocks - HTML for the blocks
-    * hasblocks - true if there are blocks on this page
-    * navdraweropen - true if the nav drawer should be open on page load
-    * regionmainsettingsmenu - HTML for the region main settings menu
-    * hasregionmainsettingsmenu - There is a region main settings menu on this page.
+Context variables required for this template:
+* sitename - The name of the site
+* output - The core renderer for the page
+* bodyattributes - attributes for the body tag as a string of html attributes
+* sidepreblocks - HTML for the blocks
+* hasblocks - true if there are blocks on this page
+* navdraweropen - true if the nav drawer should be open on page load
+* regionmainsettingsmenu - HTML for the region main settings menu
+* hasregionmainsettingsmenu - There is a region main settings menu on this page.
 
-    Example context (json):
-    {
-        "sitename": "Moodle",
-        "output": {
-            "doctype": "<!DOCTYPE html>",
-            "page_title": "Test page",
-            "favicon": "favicon.ico",
-            "main_content": "<h1>Headings make html validators happier</h1>"
-         },
-        "bodyattributes":"",
-        "sidepreblocks": "<h2>Blocks html goes here</h2>",
-        "hasblocks":true,
-        "navdraweropen":true,
-        "regionmainsettingsmenu": "",
-        "hasregionmainsettingsmenu": false
-    }
+Example context (json):
+{
+"sitename": "Moodle",
+"output": {
+"doctype": "
+<!DOCTYPE html>",
+"page_title": "Test page",
+"favicon": "favicon.ico",
+"main_content": "<h1>Headings make html validators happier</h1>"
+},
+"bodyattributes":"",
+"sidepreblocks": "<h2>Blocks html goes here</h2>",
+"hasblocks":true,
+"navdraweropen":true,
+"regionmainsettingsmenu": "",
+"hasregionmainsettingsmenu": false
+}
 }}
 {{> theme_cyber_range/partials/head }}
 
-<body id="course-overview">
-{{> theme_cyber_range/navbar }}
-{{> core/local/toast/wrapper}}
+<body {{{ bodyattributes }}}>
+  {{> theme_cyber_range/navbar }}
+  {{> core/local/toast/wrapper}}
 
-<div class="height-100 bg-light mt-3">
-  <div class="wrapper">
-    {{> theme_cyber_range/partials/search }}
-    <div class="container mb-3">
-      <ekc-course-overview></ekc-course-overview>
+  <div class="height-100 bg-light mt-3">
+    <div class="wrapper">
+      {{> theme_cyber_range/partials/search }}
+      <div class="container mb-3">
+
+        <div class="course-overview-container">
+          <h2>Introduction to Course #1</h2>
+          <div class="course-summary">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo
+            consequat.
+          </div>
+
+          <div class="course-header-image" style="background-image: url({{background}})">
+            <div class="course-title">Course #1 Name</div>
+          </div>
+
+          <div class="row">
+            <!-- Explore Colum -->
+            <div class="col">
+              <h3>EXPLORE BY:</h3>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><ekc-icon type="magnifyingglass"></ekc-icon></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Search here" aria-label="Search here">
+              </div>
+
+              <div class="list-container">
+                <ul>
+                  <li>
+                    <p class="line-item-header"><span class="bullet">&#9679;</span> One Line Item</p>
+                    <p class="line-item-secondary-text">Secondary Text</p>
+                  </li>
+                  <li>
+                    <p class="line-item-header"><span class="bullet">&#9679;</span> One Line Item</p>
+                    <p class="line-item-secondary-text">Secondary Text</p>
+                  </li>
+                  <li>
+                    <p class="line-item-header"><span class="bullet">&#9679;</span> One Line Item</p>
+                    <p class="line-item-secondary-text">Secondary Text</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col col-9">
+              <!-- Modules -->
+              <div>
+                <h3>Modules</h3>
+                <!-- carousel -->
+                <div class="row">
+                  <div class="col">
+                    <div class="card content">
+                      <div class="card-body">
+                        <div class="number-circle">01</div>
+                        <h3 class="card-title">Module Title</h3>
+                        <div class="card-text">Description of module</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card content">
+                      <div class="card-body">
+                        <div class="number-circle">02</div>
+                        <h3 class="card-title">Module Title</h3>
+                        <div class="card-text">Description of module</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card content">
+                      <div class="card-body">
+                        <div class="number-circle">03</div>
+                        <h3 class="card-title">Module Title</h3>
+                        <div class="card-text">Description of module</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="number-circle success">
+                      <ekc-icon type="arrow-right-1-2"></ekc-icon>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Labs -->
+              <div class="mt-3">
+                <h3>Labs</h3>
+                <!-- carousel -->
+                <div class="row">
+                  <div class="col">
+                    <div class="card content">
+                      <div class="card-body">
+                        <div class="number-circle tertiary">01</div>
+                        <h3 class="card-title">Lab Title</h3>
+                        <div class="card-text">Description of module</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card content">
+                      <div class="card-body">
+                        <div class="number-circle tertiary">02</div>
+                        <h3 class="card-title">Lab Title</h3>
+                        <div class="card-text">Description of module</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card content">
+                      <div class="card-body">
+                        <div class="number-circle tertiary">03</div>
+                        <h3 class="card-title">Lab Title</h3>
+                        <div class="card-text">Description of module</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Scenarios -->
+              <div class="mt-3">
+                <h3>Scenario</h3>
+                <!-- carousel -->
+                <div class="row">
+                  <div class="col">
+                    <div class="card content">
+                      <div class="card-body">
+                        <div class="number-circle secondary">01</div>
+                        <h3 class="card-title">Scenario Title</h3>
+                        <div class="card-text">Description of module</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card content">
+                      <div class="card-body">
+                        <div class="number-circle secondary">02</div>
+                        <h3 class="card-title">Scenario Title</h3>
+                        <div class="card-text">Description of module</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card content">
+                      <div class="card-body">
+                        <div class="number-circle secondary">03</div>
+                        <h3 class="card-title">Scenario Title</h3>
+                        <div class="card-text">Description of module</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Exercises -->
+              <div class="mt-3">
+                <h3>Exercises</h3>
+                <!-- carousel -->
+                <div class="row">
+                  <div class="col">
+                    <div class="card content">
+                      <div class="card-body">
+                        <div class="number-circle danger">01</div>
+                        <h3 class="card-title">Exercise Title</h3>
+                        <div class="card-text">Description of module</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card content">
+                      <div class="card-body">
+                        <div class="number-circle danger">02</div>
+                        <h3 class="card-title">Exercise Title</h3>
+                        <div class="card-text">Description of module</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card content">
+                      <div class="card-body">
+                        <div class="number-circle danger">03</div>
+                        <h3 class="card-title">Exercise Title</h3>
+                        <div class="card-text">Description of module</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
 
 
-{{> theme_cyber_range/partials/footer }}
+  {{> theme_cyber_range/partials/footer }}
 </body>
+
 </html>

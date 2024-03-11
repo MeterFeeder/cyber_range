@@ -1,0 +1,33 @@
+
+<div class=" snapshot-wrapper">
+    <section class="profile  col-md-4">
+        <div class="user-details">
+            <div class="avatar-wrapper">
+            <span class="avatars">
+        {{#avatardata}}
+            <span class="avatar {{classes}}">
+                {{{content}}}
+            </span>
+        {{/avatardata}}
+    </span>
+            </div>
+            <div class="user-wrapper">
+            <h3 class="name">{{ userfullname }}</h3>
+            <p class="role">{{ user.username }}</p>
+            </div>
+        </div>
+    </section>
+    
+    {{# items }}
+        <section class="card col-md-4 gradient-{{class}}">
+            <div class="card-header">
+            <ekc-icon type="{{icon}}"></ekc-icon>
+            </div>
+            <div class="card-body">
+            <p class="value">{{ value }}</p>
+            <p class="name">{{ name }}</p>
+            </div>
+        </section>
+    {{/ items }}
+
+</div>

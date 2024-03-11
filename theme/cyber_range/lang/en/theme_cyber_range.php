@@ -10,3 +10,10 @@ $string['choosereadme'] = 'Theme  is a child theme of Boost.';
 $string['pluginname'] = 'Cyber Range';                                                                                                    
 // We need to include a lang string for each block region.                                                                          
 $string['region-side-pre'] = 'Right';
+
+$string['profile_snapshot'] = 'Profile Snapshot';
+$string['learning_hours'] = 'Total Learning Hours';
+$string['courses_completed'] = 'Courses Completed';
+$string['labs_completed'] = 'Labs Completed';
+$string['assessments_completed'] = 'Assessments Completed';
+$string['daily_streak'] = 'Daily Streak';

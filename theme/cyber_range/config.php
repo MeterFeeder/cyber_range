@@ -5,6 +5,28 @@
 // This line protects the file from being accessed by a URL directly.
 defined('MOODLE_INTERNAL') || die();
 
+
+// The course page regions.
+$courselayoutregions = [
+    'side-post',
+    'frnt-footer',
+    'course-top-a',
+    'course-top-b',
+    'course-top-c',
+    'course-top-d',
+    'news-slider-a',
+    'course-tab-one-a',
+    'course-tab-two-a',
+    'my-tab-one-a',
+    'my-tab-two-a',
+    'course-bottom-a',
+    'course-bottom-b',
+    'course-bottom-c',
+    'course-bottom-d',
+    'course-section-a',
+];
+
+
 // $THEME is defined before this page is included and we can define settings by adding properties to this global object.
 
 // The first setting we need is the name of the theme. This should be the last part of the component name, and the same
@@ -63,21 +85,21 @@ $THEME->layouts = [
         'defaultregion' => 'side-pre',
     ),
     // Main course page.
-    'course' => array(
+    'course' => [
         'file' => 'courseoverview.php',
-        'regions' => array('side-pre'),
-        'defaultregion' => 'side-pre',
-        'options' => array('langmenu' => true),
-    ),
+        'regions' => $courselayoutregions,
+        'defaultregion' => 'side-post',
+        'options' => ['langmenu' => true],
+    ],
     // My courses page.
     'mycourses' => array(
-        'file' => 'mycourses.php',
+        'file' => 'drawers.php',
         'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
         'options' => array('nonavbar' => true),
     ),
     'coursecategory' => array(
-        'file' => 'columns2.php',
+        'file' => 'coursecategory.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
     ),
@@ -96,7 +118,7 @@ $THEME->layouts = [
     // ),
     // Server administration scripts.
     'admin' => array(
-        'file' => 'columns2.php',
+        'file' => 'admin.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
     ),
