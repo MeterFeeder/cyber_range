@@ -34,9 +34,9 @@ use theme_boost\output\core_renderer as core_renderer_base;
 /**
  * Core Renderer
  */
-class core_renderer extends core_renderer_base {
-    use core_renderer_layout;
-}
+// class core_renderer extends core_renderer_base {
+//     // use core_renderer_layout;
+// }
 
 
 require_once(__DIR__ . '/core/course_renderer.php');
