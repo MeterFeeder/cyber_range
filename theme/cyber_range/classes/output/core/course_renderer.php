@@ -26,23 +26,35 @@ class course_renderer extends \core_course_renderer
         // Get the categories to idsplay
         $usertop = core_course_category::user_top();
         if (empty($category)) {
-            $coursecat = $usertop;
+            return $this->categories_search_content($usertop);
         } else if (is_object($category) && $category instanceof core_course_category) {
-            $coursecat = $category;
+            return $this->single_category_content($category);
         } else {
-            $coursecat = core_course_category::get(is_object($category) ? $category->id : $category);
+            $category = core_course_category::get(is_object($category) ? $category->id : $category);
+            return $this->single_category_content($category);
         }
         
+       
+    }
+
+    private function single_category_content($category)
+    {
+        return '<p>This is one category <strong>Figma Screen 30</strong></p>';
+    }
+
+    private function categories_search_content($categories)
+    {
+        global $OUTPUT;
+        $templatecontext = [];
+
         // Show the action bar
-        $actionbar = new \core_course\output\category_action_bar($this->page, $coursecat);
+        $actionbar = new \core_course\output\category_action_bar($this->page, $categories);
         $templatecontext['actionbar'] = $this->render_from_template('core_course/category_actionbar', $actionbar->export_for_template($this));
 
 
         $templatecontext['unlock_image'] = $OUTPUT->image_url('unlock', 'theme');
         $output = $this->render_from_template('theme_cyber_range/course_category', $templatecontext);
 
-        // $output.= '<p>Choose from over (x-number) of categories.</p><section class="course-category">Categories go Here</section>';
-        // // $output .= parent::course_category($category);
         return $output;
 
     }
