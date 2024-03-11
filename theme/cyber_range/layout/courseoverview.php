@@ -29,10 +29,12 @@ require_once($CFG->libdir . '/behat/lib.php');
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();
 
-$extraclasses = [];
+$extraclasses = ['courseoverview'];
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
+
+$background = $OUTPUT->image_url('matrix-o', 'theme');
 
 $secondarynavigation = false;
 $overflow = '';
@@ -72,6 +74,7 @@ $templatecontext = theme_cyber_range_get_angular_content([
     'headercontent' => $headercontent,
     'overflow' => $overflow,
     'addblockbutton' => $addblockbutton,
+    'background' => $background,
 ]);
 
 echo $OUTPUT->render_from_template('theme_cyber_range/courseoverview', $templatecontext);

@@ -1,0 +1,159 @@
+body.courseoverview {
+    .course-overview-container {
+        // TODO fix this so that content is not beneath left nav
+        // margin-left: 10%;
+        font-family: Inter, sans-serif;
+        max-width: 1076px;
+    }
+
+    h2,
+    h3 {
+        font-family: Metropolis;
+        color: var(--dark-text);
+        font-weight: 700;
+        text-align: left;
+    }
+
+    h2 {
+        font-size: 24px;
+        line-height: 24px;
+        letter-spacing: 0em;
+    }
+
+    h3 {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0px;
+    }
+
+    .course-summary {
+        font-size: 15px;
+        max-width: 1076px;
+    }
+
+    .course-header-image {
+        // TODO replace with asset in repo
+        // background-image: url(https://s3-alpha-sig.figma.com/img/aecf/944d/35bb9bcaa846643e66fa3df0574ea9a4?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jwYNOdCu0vLsjojQMDSwQPJjG89yZETAbFXiJgMh7smWO2AqPVHNFX5okfMUFf5yIHr52dsS7KyOKgWSeg4A4-fGsC1L8T6nQY3QIoGMj0bIgtwuwXQYhzXyyHGSRsavQakqF3EGIMMEvmL994NBQzDjjwIZBxh6irojELWTkMFTTikcRuqd9VqPBWgCGS2FUSTKYRPWfNOTjN5iaI~1UY5VM-zWoW1gq2OL0dKEfxmT8-tJy1iuSuwaqvz~J8-igSYJQiV6ZyAtHr~z1LVqv~X~ujFl2FRm8dcOydKXVrfSlr9f1Je01nmXJ~7sCwLGpns5Beqc5URFvJ~M7j~lPw__);
+        width: 1076px;
+        height: 240px;
+        top: 233px;
+        left: 121px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2em 0;
+    }
+
+    .course-title {
+        color: var(--light-text);
+        font-family: Inter;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 48px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+    .form-control {
+        border-radius: 7px;
+        background-color: var(--color-mid-blue-background);
+        color: var(--color-primary);
+        border: none;
+    }
+
+    .input-group-text {
+        background-color: #212B6614;
+        border: none;
+        color: var(--color-primary);
+    }
+
+    .list-container {
+        border-radius: 6px;
+        background-color: var(--color-mid-blue-background);
+    }
+
+    ul {
+        list-style-type: none;
+        color: var(--color-primary);
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        border-bottom: 1px solid #00000033;
+        padding-top: 1em;
+        margin: 0 1em;
+    }
+
+    .line-item-header {
+        font-family: Gotham, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 16px;
+        letter-spacing: 0px;
+        margin-bottom: 0.25em;
+    }
+
+    .line-item-secondary-text {
+        font-family: Gotham, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 14px;
+        letter-spacing: 0px;
+        color: var(--mid-dark-text);
+        padding-left: 1.75em;
+    }
+
+    li:last-child {
+        border-bottom: none;
+        padding-bottom: 0.5em;
+    }
+
+    .content {
+        width: 223px;
+        height: 193.02px;
+    }
+
+    .card-body {
+        margin: 40px 17px;
+    }
+
+    .number-circle {
+        background-color: var(--color-primary);
+        border-radius: 100%;
+        width: 2em;
+        height: 2em;
+        color: var(--light-text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5em;
+    }
+
+    .tertiary {
+        background-color: var(--color-tertiary);
+    }
+
+    .secondary {
+        background-color: var(--color-secondary);
+    }
+
+    .danger {
+        background-color: var(--color-danger);
+    }
+
+    .success {
+        background-color: var(--color-success);
+    }
+
+    .card-text {
+        font-family: Gotham;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 13px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--mid-dark-text);
+    }
+}
