@@ -96,6 +96,37 @@ body.categories {
     }
   }
 
+  section.single-category-content {
+    width: 90%;
 
+    .course-selection {
+      font-family: Metropolis;
+      margin-top: 35px;
+      margin-bottom: 35px;
 
+      .course-select {
+        width: 100px;
+      }
+    }
+
+    .progress {
+      height: 5px;
+      margin-top: 10px;
+      background: #D9D9D9;
+      width: 95%;
+    }
+
+    .course-card {
+      background: linear-gradient(116.22deg, #0081C5 0%, #71B2DC 105.18%);
+
+      .card-body {
+        margin-bottom: 0px;
+
+        p.more {
+          margin-top: 125px;
+        }
+      }
+    }
+
+  }
 }
