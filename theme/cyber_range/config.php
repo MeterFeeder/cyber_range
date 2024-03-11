@@ -86,7 +86,7 @@ $THEME->layouts = [
     ),
     // Main course page.
     'course' => [
-        'file' => 'course.php',
+        'file' => 'courseoverview.php',
         'regions' => $courselayoutregions,
         'defaultregion' => 'side-post',
         'options' => ['langmenu' => true],
