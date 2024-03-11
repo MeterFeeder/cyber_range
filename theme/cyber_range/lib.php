@@ -41,7 +41,7 @@ function theme_cyber_range_get_angular_content($templatecontext)
     if (array_key_exists('primarymoremenu', $templatecontext) && array_key_exists('nodearray', $templatecontext['primarymoremenu']))
     {
         // Add the course categories link to the primary more menu.
-        $link = make_nav_link('categories', 'Categories', new moodle_url('/course'));
+        $link = make_nav_link('categories', 'Categories', new moodle_url('/course/index.php'));
         $templatecontext["primarymoremenu"]['nodearray'] = merge_link($templatecontext["primarymoremenu"]['nodearray'], $link, -1);
         
 

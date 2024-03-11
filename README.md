@@ -1,6 +1,32 @@
 ## Cyber Range Template release
 
-# Release key:
+# Release
+
+## Build
+
+1. Merge all changes into `cyber_range/main` branch.
+2. checkout `cyber_range/release` branch and merge main.
+3. Change to the build directory, `theme/cyber_range/elements` and run `yarn build`.
+  - This will create the `dist` directory with the built files.
+4. Commit the changes and push to the repo.
+
+## Update 
+
+1. Log into https://my.ekc.thissl.com/#/apps (user name jimgibbs)
+2. Click the Gear on Learning
+3. Click the link to open the terminal
+
+  - Note that the git release key's password is the same as the Moodle admin password.
+
+  ```
+  cd /app/data/moodle
+  GIT_SSH_COMMAND='ssh -i ../id_ed25519 -o IdentitiesOnly=yes' git pull
+  ```
+4. Visit https://learning.heartlandcyberrange.com/ login ad admin and run updates.
+
+# Initial Setup
+
+## Release key:
 ```
 ssh-keygen -t ed25519 -C "dan@meterfeeder.com"
 ```
