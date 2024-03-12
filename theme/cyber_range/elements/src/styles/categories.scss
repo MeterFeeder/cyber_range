@@ -99,6 +99,12 @@ body.categories {
   section.single-category-content {
     width: 90%;
 
+    .courses {
+      row-gap: var(--bs-gutter-x, 1.5rem);
+      .card {
+        height: 100%;
+      }
+    }
     .course-selection {
       font-family: Metropolis;
       margin-top: 35px;
@@ -122,8 +128,27 @@ body.categories {
       .card-body {
         margin-bottom: 0px;
 
-        p.more {
-          margin-top: 125px;
+        h4 {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        .summary {
+          max-height: 198px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin-bottom: 65px;
+        }
+        .teachers, p.more {
+          position: absolute;
+          bottom: 1em;
+        }
+        .teachers {
+          bottom: 2.5em;
+          list-style: none;
+          list-style-type: none;
+          padding: 0;
         }
       }
     }

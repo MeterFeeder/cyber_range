@@ -17,3 +17,4 @@ $string['courses_completed'] = 'Courses Completed';
 $string['labs_completed'] = 'Labs Completed';
 $string['assessments_completed'] = 'Assessments Completed';
 $string['daily_streak'] = 'Daily Streak';
+$string['more'] = 'More';
