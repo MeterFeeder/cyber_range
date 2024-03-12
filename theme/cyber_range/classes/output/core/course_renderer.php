@@ -121,6 +121,14 @@ class course_renderer extends \core_course_renderer
 
     protected function coursecat_coursebox(\coursecat_helper $chelper, $course, $additionalclasses = '')
     {
+        global $PAGE;
+        
+        // Don't use out custom course box for the site index page.
+        if ($PAGE->pagetype != 'course-index-category') {
+            return parent::coursecat_coursebox($chelper, $course, $additionalclasses);
+        }
+
+
         if (!isset($this->strings->summary)) {
             $this->strings->summary = get_string('summary');
         }
@@ -141,7 +149,8 @@ class course_renderer extends \core_course_renderer
             'description' => $this->coursecat_coursebox_content($chelper, $course),
             'link' => new moodle_url('/course/view.php', ['id' => $course->id]),
         ];
-
+       
+        
         return $this->render_from_template('theme_cyber_range/partials/category_course_box', $context);
     }
 
