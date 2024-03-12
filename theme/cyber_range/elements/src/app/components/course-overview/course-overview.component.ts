@@ -38,7 +38,6 @@ export class CourseOverviewComponent {
   ]
 
   public advance() {
-    console.log('i can get here?');
     let copy = [...this.tempModules];
     let first = copy.shift()
     if (first) {
