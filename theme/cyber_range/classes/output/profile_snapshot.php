@@ -50,8 +50,14 @@ class profile_snapshot
         global $DB, $USER, $PAGE;
 
         $id = optional_param('id', $USER->id, PARAM_INT);    // User id; -1 if creating new user.
-        $systemcontext = \context_system::instance();
-        require_capability('moodle/user:update', $systemcontext);
+
+        // If a user is trying to edit someone else, require capability.
+        if ($id != $USER->id)
+        {
+            $systemcontext = \context_system::instance();
+            require_capability('moodle/user:update', $systemcontext);
+        }
+        
         $user = $DB->get_record('user', array('id' => $id), '*', MUST_EXIST);
         $info = user_get_user_navigation_info($user, $PAGE);
 
