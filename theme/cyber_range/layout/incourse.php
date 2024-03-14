@@ -74,4 +74,15 @@ $templatecontext = theme_cyber_range_get_angular_content([
     'addblockbutton' => $addblockbutton,
 ]);
 
-echo $OUTPUT->render_from_template('theme_cyber_range/incourse', $templatecontext);
+if ($PAGE->pagetype == 'course-view-topics')
+{
+    echo $OUTPUT->render_from_template('theme_cyber_range/incourse', $templatecontext);
+}
+elseif ($PAGE->pagetype == 'mod-forum-view')
+{
+    echo $OUTPUT->render_from_template('theme_cyber_range/announcement', $templatecontext);
+}
+else
+{
+    echo $OUTPUT->render_from_template('theme_boost/columns2', $templatecontext);
+}
