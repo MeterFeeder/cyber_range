@@ -16,7 +16,9 @@
             </li>
             <!-- user_menu -->
             <li class="nav-item d-flex align-items-center">
-                {{{ output.user_menu }}}
+                {{#usermenu}}
+                    {{> core/user_menu }}
+                {{/usermenu}}
                 {{{ output.edit_switch }}}
             </li>
         </ul>

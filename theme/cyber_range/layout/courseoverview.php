@@ -75,6 +75,6 @@ $templatecontext = theme_cyber_range_get_angular_content([
     'overflow' => $overflow,
     'addblockbutton' => $addblockbutton,
     'background' => $background,
-]);
+    ]);
 
 echo $OUTPUT->render_from_template('theme_cyber_range/courseoverview', $templatecontext);

@@ -81,6 +81,49 @@ function theme_cyber_range_get_angular_content($templatecontext)
     // $templatecontext->css;
 }
 
+
+/**
+ *
+ * Get the current page to allow us to check if the block is allowed to display.
+ *
+ * @return string The page name, which is either "frontpage", "dashboard", "coursepage", "coursesectionpage" or empty string.
+ *
+ */
+function theme_cyber_range_get_current_page() {
+    global $PAGE;
+
+    // This will store the kind of activity page type we find. E.g. It will get populated with 'section' or similar.
+    $currentpage = '';
+
+    // We expect $PAGE->url to exist.  It should!
+    $url = $PAGE->url;
+
+    if ($PAGE->pagetype == 'site-index') {
+        $currentpage = 'frontpage';
+    } else if ($PAGE->pagetype == 'my-index') {
+        $currentpage = 'dashboard';
+    }
+    // Check if course home page.
+    if (empty($currentpage)) {
+        if ($url !== null) {
+            // Check if this is the course view page.
+            if (strstr($url->raw_out(), 'course/view.php')) {
+                $currentpage = 'coursepage';
+
+                // Check url paramaters.  Count should be 1 if course home page. Use this to check if section page.
+                $urlparams = $url->params();
+
+                // Allow the block to display on course sections too if the relevant setting is on.
+                if ((count($urlparams) > 1) && (array_key_exists('section', $urlparams))) {
+                    $currentpage = 'coursesectionpage';
+                }
+            }
+        }
+    }
+
+    return $currentpage;
+}
+
 function theme_cyber_range_add_menu_icons($items) {
 
     if (!count($items)) {
