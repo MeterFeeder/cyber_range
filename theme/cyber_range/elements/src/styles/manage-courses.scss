@@ -1,0 +1,41 @@
+body.managecourses {
+
+    #page.drawers .main-inner {
+        background-color: #E8E8E8;
+    }
+
+    .category-listing,
+    .card,
+    .card-header {
+        background: var(--color-gradient-secondary);
+        color: var(--light-text);
+    }
+
+    #course-category-listings h3 {
+        font-family: Metropolis;
+        font-size: 24px;
+        font-weight: 700;
+        text-align: left;
+        margin: 0.5em;
+    }
+
+    // .icon {
+    //     color: var(--light-text);
+    // }
+
+    .listitem-course, .list-group-item {
+        margin-bottom: 1em;
+    }
+
+    .listitem-category, .list-group-item {
+        margin-bottom: 1em;
+    }
+
+    .text-break {
+        color: var(--light-text);
+    }
+
+    .categoryname, .aalink {
+        color: var(--light-text);
+    }
+}
