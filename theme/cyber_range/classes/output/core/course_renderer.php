@@ -129,7 +129,7 @@ class course_renderer extends \core_course_renderer
      */
     protected function get_category_list(\renderer_base $output): array {
         $list = [];
-        if (!$this->searchvalue && !core_course_category::is_simple_site()) {
+        if (!core_course_category::is_simple_site()) {
             $categories = core_course_category::make_categories_list();
             if (count($categories) > 1) {
                 foreach ($categories as $id => $cat) {
