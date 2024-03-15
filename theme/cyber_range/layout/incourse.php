@@ -26,10 +26,22 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/behat/lib.php');
 
+$theme_file = 'theme_boost/columns2';
+$extraclasses = [];
+if ($PAGE->pagetype == 'mod-assign-view')
+{
+    $extraclasses = ['incourse'];
+    $theme_file = 'theme_cyber_range/incourse';
+}
+elseif ($PAGE->pagetype == 'mod-forum-view')
+{
+    $extraclasses = ['announcements'];
+    $theme_file = 'theme_cyber_range/announcement';
+}
+
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();
 
-$extraclasses = ['announcements'];
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
@@ -74,15 +86,4 @@ $templatecontext = theme_cyber_range_get_angular_content([
     'addblockbutton' => $addblockbutton,
 ]);
 
-if ($PAGE->pagetype == 'course-view-topics')
-{
-    echo $OUTPUT->render_from_template('theme_cyber_range/incourse', $templatecontext);
-}
-elseif ($PAGE->pagetype == 'mod-forum-view')
-{
-    echo $OUTPUT->render_from_template('theme_cyber_range/announcement', $templatecontext);
-}
-else
-{
-    echo $OUTPUT->render_from_template('theme_boost/columns2', $templatecontext);
-}
+echo $OUTPUT->render_from_template($theme_file, $templatecontext);
