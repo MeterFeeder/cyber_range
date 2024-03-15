@@ -93,7 +93,8 @@ class course_renderer extends \core_course_renderer
         $chelper->set_courses_display_options($coursedisplayoptions)->set_categories_display_options($catdisplayoptions);
   
         // Display course category tree.
-        $templatecontext['category_tree'] .= $this->coursecat_tree($chelper, $category);
+        $templatecontext = [];
+        $templatecontext['category_tree'] = $this->coursecat_tree($chelper, $category);
 
 
         $output = $this->render_from_template('theme_cyber_range/single_category_content', $templatecontext);
@@ -110,6 +111,7 @@ class course_renderer extends \core_course_renderer
         // Show the action bar
         $actionbar = new \core_course\output\category_action_bar($this->page, $categories);
         $templatecontext['actionbar'] = $this->render_from_template('core_course/category_actionbar', $actionbar->export_for_template($this));
+        $templatecontext['categories'] = $this->get_category_list($this);
 
 
         $templatecontext['unlock_image'] = $OUTPUT->image_url('unlock', 'theme');
@@ -117,6 +119,33 @@ class course_renderer extends \core_course_renderer
 
         return $output;
 
+    }
+
+    /**
+     * Gets the url_select to be displayed in the participants page if available.
+     *
+     * @param \renderer_base $output
+     * @return object|null The content required to render the url_select
+     */
+    protected function get_category_list(\renderer_base $output): array {
+        $list = [];
+        if (!$this->searchvalue && !core_course_category::is_simple_site()) {
+            $categories = core_course_category::make_categories_list();
+            if (count($categories) > 1) {
+                foreach ($categories as $id => $cat) {
+                    $list[$id] = core_course_category::get($id);
+                    // $url = new moodle_url($this->page->url, ['categoryid' => $id]);
+                    // $options[$url->out()] = $cat;
+                }
+                // $currenturl = new moodle_url($this->page->url, ['categoryid' => $this->category->id]);
+                // $select = new \url_select($options, $currenturl, null);
+                // $select->set_label(get_string('categories'), ['class' => 'sr-only']);
+                // $select->class .= ' text-truncate w-100';
+                // return $select->export_for_template($output);
+            }
+        }
+
+        return $list;
     }
 
     protected function coursecat_coursebox(\coursecat_helper $chelper, $course, $additionalclasses = '')
